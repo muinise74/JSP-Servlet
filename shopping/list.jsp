@@ -21,8 +21,14 @@
 	<%
 		//1.쿠키값 받아오기
 		Cookie[] cookies = request.getCookies();
+		boolean check = false;
+		for (int i = 0; i < cookies.length; i++){
+			if (cookies[i].getName().contains("item")){	
+				check = true;
+			}
+		}
 		//2.쿠키값 null처리
-		if (cookies != null) {		
+		if (check) {		
 			//3.쿠키이름 가져오기
 			//4.쿠키이름에 item이 포함되어 있는 경우
 			//5.해당 value 가져오기

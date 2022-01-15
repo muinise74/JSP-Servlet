@@ -158,6 +158,7 @@
 												MessageDAO mdao = new MessageDAO();
 												ArrayList<MessageDTO> MSGList = mdao.showMSG(email);
 												for (int i = 0; i < MSGList.size(); i++){
+													// 개행  처리
 													MSGList.get(i).setContent(MSGList.get(i).getContent().replaceAll("\r\n","<br/>"));
 													session.setAttribute("msg",MSGList.get(i).descMSG());
 													out.print("<li>"+session.getAttribute("msg")+"</li><br>");
